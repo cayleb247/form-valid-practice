@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form novalidate method="POST">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <p></p>
+        <label for="country">Country</label>
+        <input type="text" name="country" id="country" required>
+        <p></p>
+        <label for="postal">Postal Code (US)</label>
+        <input type="text" name="postal" id="postal" required >
+        <p></p>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+        <p></p>
+        <label for="confirm-pw">Confirm Password</label>
+        <input type="password" name="confirm-pw" id="confirm-pw" required>
+        <p></p>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
