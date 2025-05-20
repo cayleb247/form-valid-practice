@@ -55,7 +55,6 @@ function checkInputs() {
     if (!(inputs[3].value == inputs[4].value)) {
         inputs[3].setCustomValidity("Does not match.");
         inputs[4].setCustomValidity("Does not match.");
-        alert("does not match!");
         errorMessages[3].textContent = inputs[3].validationMessage;
         errorMessages[4].textContent = inputs[4].validationMessage;
         errorMessages[3].classList.add("visible");
@@ -113,7 +112,7 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     if (checkInputs()) {
-        alert("form submitted!");
+        alert("Form Submitted!");
         form.reset();
 
         // reset input submission
