@@ -43,9 +43,6 @@ input.submitted:invalid {
     border-color: red;
 }
 
-input:focus:invalid {
-}
-
 p {
     text-align: center;
     display: none;
