@@ -17,7 +17,9 @@ let formValid;
 function checkInputs() {
     formValid = true;
 
-    checkRequired();
+    for (let i=0;i<inputs.length;i++) {
+        checkRequired(i);
+    }
 
     checkPassword();
 
@@ -30,39 +32,37 @@ function checkInputs() {
 
 window.onload = () => {
     inputs[0].onchange = () => {
-        checkRequired();
+        checkRequired(0);
     }
     inputs[1].onchange = () => {
-        checkRequired();
+        checkRequired(1);
     }
     inputs[2].onchange = () => {
-        checkRequired();
+        checkRequired(2);
         checkZipcode();
     }
     inputs[3].onchange = () => {
-        checkRequired();
+        checkRequired(3);
         checkPassword();
     }
     inputs[4].onchange = () => {
-        checkRequired();
+        checkRequired(4);
         checkPassword();
     }
 }
 
-function checkRequired() {
-    for (let i=0;i<inputs.length;i++) {
-        inputs[i].classList.add("submitted");
-        if (!inputs[i].checkValidity()) {
-            console.log(inputs[i].validationMessage);
-            errorMessages[i].textContent = inputs[i].validationMessage;
-            errorMessages[i].classList.add("visible");
-            formValid = false;
-        } else {
-            errorMessages[i].textContent = "";
-            errorMessages[i].classList.remove("visible");
-        }
+function checkRequired(input_index) {
+    inputs[input_index].classList.add("submitted");
+    if (!inputs[input_index].checkValidity()) {
+        errorMessages[input_index].textContent = inputs[input_index].validationMessage;
+        errorMessages[input_index].classList.add("visible");
+        formValid = false;
+    } else {
+        errorMessages[input_index].textContent = "";
+        errorMessages[input_index].classList.remove("visible");
     }
 }
+
 
 function checkPassword() {
     if (inputs[3].value == "") {
